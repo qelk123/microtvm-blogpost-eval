@@ -273,6 +273,8 @@ def reset_gdbinit(dev_config):
     if 'server_port' not in dev_config:
         return
     gdb_init_dir = MICRO_GDB_DEBUG_PATH
+    if not os.path.exists(gdb_init_dir):
+        os.makedirs(gdb_init_dir)
     with open(f'{gdb_init_dir}/.gdbinit', 'w') as f:
         gdb_port = dev_config['server_port'] - 3333
         gdbinit_contents = (
