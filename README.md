@@ -69,6 +69,7 @@ You need to do this once per dev board.
 ```bash
 $ mbed import https://github.com/areusch/utvm-mbed-runtime utvm-mbed-runtime
 $ cd utvm-mbed-runtime
+$ mbed update utvm-blogpost-1
 $ mbed compile -m NUCLEO_F746ZG -t GCC_ARM --flash
 
 Image: ./BUILD/NUCLEO_F746ZG/GCC_ARM/utvm-mbed-runtime.bin
