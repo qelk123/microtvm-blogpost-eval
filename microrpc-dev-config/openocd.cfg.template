@@ -1,0 +1,16 @@
+source [find board/pynq-z1.cfg]
+reset_config srst_only separate srst_nogate srst_push_pull connect_deassert_srst
+
+telnet_port {4444 + instance_num}
+
+init
+#reset
+halt 0
+#mww 0xF8000008 0x0000DF0D
+#mww 0xF8000910 0x1F
+#mdw 0xF8000910
+#mdw 0xFFFc0300
+
+#zynq.cpu1 arm core_state thumb
+#zynq.cpu0 arm core_state thumb
+#resume
